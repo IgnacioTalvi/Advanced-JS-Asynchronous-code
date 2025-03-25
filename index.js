@@ -4,7 +4,10 @@
 function getAllBreeds() {
   return fetch("https://dog.ceo/api/breeds/list")
     .then((res) => res.json())
-    .then((data) => data.message);
+    .then((data) => data.message)
+    .catch((error) => {
+      console.error("Error fetching data from fakestoreapi:", error);
+    });
 }
 
 getAllBreeds().then((data) => console.log(data));
@@ -13,7 +16,10 @@ getAllBreeds().then((data) => console.log(data));
 function getRandomDog() {
   return fetch("https://dog.ceo/api/breeds/image/random")
     .then((res) => res.json())
-    .then((data) => data.message);
+    .then((data) => data.message)
+    .catch((error) => {
+      console.error("Error fetching data from fakestoreapi:", error);
+    });
 }
 
 getRandomDog().then((data) => console.log(data));
@@ -22,7 +28,10 @@ getRandomDog().then((data) => console.log(data));
 function getAllImagesByBreed() {
   return fetch("https://dog.ceo/api/breed/komondor/images")
     .then((res) => res.json())
-    .then((data) => data.message);
+    .then((data) => data.message)
+    .catch((error) => {
+      console.error("Error fetching data from fakestoreapi:", error);
+    });
 }
 
 console.log(getAllImagesByBreed());
@@ -31,16 +40,22 @@ console.log(getAllImagesByBreed());
 function getAllImagesByBreed2(raza) {
   return fetch(`https://dog.ceo/api/breed/${raza}/images`)
     .then((res) => res.json())
-    .then((data) => data.message);
+    .then((data) => data.message)
+    .catch((error) => {
+      console.error("Error fetching data from fakestoreapi:", error);
+    });
 }
 
-console.log(getAllImagesByBreed2(komondor));
+console.log(getAllImagesByBreed2("komondor"));
 
 // EJERCICIO 5
 function getGitHubUserProfile(username) {
   return fetch(`https://api.github.com/users/${username}`)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data) => data)
+    .catch((error) => {
+      console.error("Error fetching data from fakestoreapi:", error);
+    });
 }
 
 console.log(getGitHubUserProfile("ignaciotalvi"));
