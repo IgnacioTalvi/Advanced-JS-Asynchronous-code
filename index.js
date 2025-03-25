@@ -37,3 +37,10 @@ function getAllImagesByBreed2(raza) {
 console.log(getAllImagesByBreed2(komondor));
 
 // EJERCICIO 5
+function getGitHubUserProfile(username) {
+  return fetch(`https://api.github.com/users/${username}`)
+    .then((res) => res.json())
+    .then((data) => data);
+}
+
+console.log(getGitHubUserProfile("ignaciotalvi"));
