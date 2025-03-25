@@ -7,7 +7,7 @@ function getAllBreeds() {
     .then((data) => data.message);
 }
 
-console.log(getAllBreeds());
+getAllBreeds().then((data) => console.log(data));
 
 // EJERCICIO 2
 function getRandomDog() {
@@ -16,7 +16,7 @@ function getRandomDog() {
     .then((data) => data.message);
 }
 
-console.log(getRandomDog());
+getRandomDog().then((data) => console.log(data));
 
 // EJERCICIO 3
 function getAllImagesByBreed() {
@@ -44,3 +44,5 @@ function getGitHubUserProfile(username) {
 }
 
 console.log(getGitHubUserProfile("ignaciotalvi"));
+
+// EJERCICIO 6
